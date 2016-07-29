@@ -12,11 +12,15 @@ export default class Episode extends Component {
   };
 
   render() {
-    const { title } = this.props;
+    const { title, url } = this.props;
 
     return (
       <div>
         { title }
+        <br />
+        <audio src={url} controls>
+            Browser does not support audio please try: <a href={url}>{url}</a>
+        </audio>
       </div>
     );
 

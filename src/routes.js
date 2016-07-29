@@ -6,7 +6,6 @@ export default function getRoutes() {
   return (<Route path="/" component={App}>
     <IndexRoute component={Index}/>
     { /* Add routes below */ }
-    <Route path="episodes" component={Episodes}/>
     <Route path="*" component={NotFound} status={404}/>
   </Route>);
 }

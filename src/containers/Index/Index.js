@@ -37,7 +37,7 @@ export default class Index extends Component {
 
         <div className="container">
 
-          <h1>End2End.fm</h1>
+          <h1>End to End.fm</h1>
 
           <p className={styles.description}>
              Discussing the journey of digital products
