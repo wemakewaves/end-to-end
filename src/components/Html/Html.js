@@ -15,6 +15,8 @@ export default class Html extends Component {
     const content = component ? ReactDOM.renderToString(component) : '';
     const head = Helmet.rewind();
 
+
+
     return (<html lang="fa-ir">
       <head>
         <meta charSet="utf-8"/>
@@ -51,6 +53,12 @@ export default class Html extends Component {
         <script
           dangerouslySetInnerHTML={{ __html: `window.__data=${serialize(store.getState())};` }}
         />
+
+        <script
+          dangerouslySetInnerHTML={{ __html: `try{Typekit.load({ async: true });}catch(e){}` }}
+        />
+
+
 
         {
           Object

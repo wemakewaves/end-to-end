@@ -44,7 +44,7 @@ export default class Index extends Component {
 
     return (<div>
 
-      <Helmet title="End2End.fm - Discussing the journey of digital products"/>
+      <Helmet title="Discussing the journey of digital products"/>
 
       <div className={styles.masthead}>
         <div className="l-constrain">

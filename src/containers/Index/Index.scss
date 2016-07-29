@@ -31,13 +31,18 @@ body {
     margin-bottom: 2rem;
 }
 
-:local(.wrapper) {
 
+:local(.strapline) {
+    font-size: 21px;
+    font-weight: normal;
 }
 
 :local(.episodes) {
-    display: flex;
-    margin: 0 -1rem;
+
+    @media (min-width: 800px) {
+        display: flex;
+        margin: 0 -1rem;
+    }
 }
 
 :local(.jumbotron) {

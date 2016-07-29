@@ -9,5 +9,11 @@ export const head = {
   meta: [
     { name: 'description', content: 'EndtoEnd.fm is a podcast discussing the journey of digital products, from requirements gathering, development to deployment.' },
     { charset: 'utf-8' }
-  ]
+    ],
+    script: [
+       {
+           "src": "https://use.typekit.net/lth3fns.js",
+           "type": "text/javascript"
+       }
+     ]
 };
