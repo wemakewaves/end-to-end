@@ -82,9 +82,8 @@
     "redux-saga": "^0.10.4",
     "serialize-javascript": "^1.2.0",
     "webpack": "^1.13.1",
-    "webpack-isomorphic-tools": "^2.2.50"
-  },
-  "devDependencies": {
+    "webpack-isomorphic-tools": "^2.2.50",
+    "clean-webpack-plugin": "^0.1.9",
     "babel-core": "^6.8.0",
     "babel-eslint": "^6.0.4",
     "babel-loader": "^6.2.4",
@@ -96,7 +95,6 @@
     "babel-preset-stage-0": "^6.5.0",
     "better-npm-run": "0.0.10",
     "chai": "^3.5.0",
-    "clean-webpack-plugin": "^0.1.9",
     "css-loader": "^0.23.1",
     "enzyme": "^2.3.0",
     "eslint": "^2.11.1",
@@ -133,6 +131,8 @@
     "webpack-dev-middleware": "^1.6.1",
     "webpack-dev-server": "^1.14.1",
     "webpack-hot-middleware": "^2.10.0"
+  },
+  "devDependencies": {
   },
   "engines": {
     "node": "4.1.1",
