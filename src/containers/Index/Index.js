@@ -2,11 +2,17 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { asyncConnect } from 'redux-connect';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { load } from 'redux/modules/episodes';
 import Helmet from 'react-helmet';
 import styles from './Index.scss';
 import Episodes from '../Episodes/Episodes';
 import Episode from '../../components/Episode/Episode';
+import * as actionCreators from 'redux/modules/playing';
+
+function mapDispatchToProps(dispatch) {
+  return { actions: bindActionCreators(actionCreators, dispatch) };
+}
 
 @asyncConnect([
   {
@@ -19,15 +25,15 @@ import Episode from '../../components/Episode/Episode';
   }
 ])
 @connect(state => ({
-  data: state.episodes.data,
-  loading: state.episodes.loading,
-  loaded: state.episodes.loaded
-}))
+  episodes: state.episodes,
+  playing: state.playing
+}), mapDispatchToProps)
 
 export default class Index extends Component {
+
   render() {
 
-    const { loading, loaded, data } = this.props;
+    const { episodes, playing, actions } = this.props;
 
     return (<div className={styles.wrapper}>
 
@@ -43,17 +49,19 @@ export default class Index extends Component {
              Discussing the journey of digital products
           </p>
 
-          <div className="container">
-            {
-              loading ? <span>Please wait fetching data...</span> : null
-            }
-            {
-              loaded ? data.map(episode => <Episode key={episode.id} {...episode} /> ) : null
-            }
-          </div>
-
         </div>
 
+      </div>
+
+
+      <div class="container">
+        <h2>Now playing: {playing.title}</h2>
+        {
+          episodes.loading ? <span>Please wait fetching data...</span> : null
+        }
+        {
+          episodes.loaded ? episodes.data.map(episode => <Episode key={episode.id} playEpisode={actions.startPlaying} nowPlaying={playing} episode={episode} /> ) : null
+        }
       </div>
 
     </div>);

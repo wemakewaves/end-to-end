@@ -4,23 +4,26 @@ import styles from './Episode.scss';
 export default class Episode extends Component {
 
   static propTypes = {
-      title: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      speakers: PropTypes.array.isRequired,
-      date: PropTypes.number.isRequired,
-      duration: PropTypes.object.isRequired
+      episode: PropTypes.object.isRequired,
+      playEpisode: PropTypes.func.isRequired
   };
 
   render() {
-    const { title, url } = this.props;
+    const { title, description, speakers, date, duration, url } = this.props.episode;
 
     return (
       <div>
         { title }
         <br />
-        <audio src={url} controls>
-            Browser does not support audio please try: <a href={url}>{url}</a>
-        </audio>
+        { description }
+        <br />
+        { speakers.map(speaker => `${speaker}, `) }
+        <br />
+        { date }
+        <br />
+        Currently Playing: { this.props.episode.id === this.props.nowPlaying.id ? 'yes' : 'no' }
+        <br />
+        <button onClick={ () => this.props.playEpisode(this.props.episode) }>Start Playing</button>
       </div>
     );
 
