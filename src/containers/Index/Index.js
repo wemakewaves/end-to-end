@@ -9,6 +9,7 @@ import styles from './Index.scss';
 import Episodes from '../Episodes/Episodes';
 import Episode from '../../components/Episode/Episode';
 import * as actionCreators from 'redux/modules/playing';
+import logo from './logo.svg';
 
 function mapDispatchToProps(dispatch) {
   return { actions: bindActionCreators(actionCreators, dispatch) };
@@ -31,37 +32,33 @@ function mapDispatchToProps(dispatch) {
 
 export default class Index extends Component {
 
+  renderEpisode(episode) {
+      return (
+          <Episode key={episode.id} playEpisode={this.props.actions.startPlaying} nowPlaying={this.props.playing} episode={episode} />
+      )
+  }
+
   render() {
 
     const { episodes, playing, actions } = this.props;
 
-    return (<div className={styles.wrapper}>
+    return (<div>
 
       <Helmet title="End2End.fm - Discussing the journey of digital products"/>
 
-      <div className={styles.jumbotron}>
-
-        <div className="container">
-
-          <h1>End to End.fm</h1>
-
-          <p className={styles.description}>
-             Discussing the journey of digital products
-          </p>
-
+      <div className={styles.masthead}>
+        <div className="l-constrain">
+            <img src={logo} width="246" height="246" />
+            <h2 className={styles.strapline}>
+                The podcast discussing the journey of digital products from end to end
+            </h2>
         </div>
-
       </div>
 
-
-      <div class="container">
-        <h2>Now playing: {playing.title}</h2>
-        {
-          episodes.loading ? <span>Please wait fetching data...</span> : null
-        }
-        {
-          episodes.loaded ? episodes.data.map(episode => <Episode key={episode.id} playEpisode={actions.startPlaying} nowPlaying={playing} episode={episode} /> ) : null
-        }
+      <div className="l-constrain">
+          <div className={styles.episodes}>
+             { episodes.data.map(episode => this.renderEpisode(episode)) }
+          </div>
       </div>
 
     </div>);

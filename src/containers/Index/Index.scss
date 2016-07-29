@@ -1,20 +1,45 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    height: 100%;
+    -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+
+.l-constrain {
+    max-width: 1062px;
+    margin: 0 auto;
+}
+
+:local(.masthead) {
+    padding: 1.5rem 0;
+    color: #008B8B;
+    min-height: 55vh;
+    background:url('./masthead.jpg') no-repeat;
+    background-size: cover;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
 :local(.wrapper) {
-  margin-top: 50px;
+
+}
+
+:local(.episodes) {
+    display: flex;
+    margin: 0 -1rem;
 }
 
 :local(.jumbotron) {
-  background-color: #333;
-  color: #ffffff;
-  text-align: center;
-  padding: 80px 0;
 
-  h1 {
-    font-size: 8em;
-    margin-top: 0;
-  }
-
-  :local(.description) {
-    font-size: 1.5em;
-    margin-bottom: 30px;
-  }
 }

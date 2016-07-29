@@ -15,7 +15,6 @@ export default class App extends Component {
     return (<div>
       <Helmet {...head}/>
       {children}
-      <Footer />
     </div>);
   }
 }
