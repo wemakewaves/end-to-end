@@ -1,0 +1,31 @@
+
+:local(.timeline) {
+    width: 400px;
+	height: 20px;
+	background: #4200f7;
+	position: relative;
+	border-radius: 15px;
+    margin: 0;
+}
+
+:local(.playhead) {
+    width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	top: 1px;
+    position: absolute;
+	background: rgba(0, 255, 196, 0.82);
+}
+
+
+:local(.audio_progress_container) {
+  position: relative;
+  height: 30px;
+  flex-grow: 1;
+}
+:local(.audio_progress) {
+  background-color: #4a4a4a;
+  height: 100%;
+  width: 0;
+  will-change: width;
+}

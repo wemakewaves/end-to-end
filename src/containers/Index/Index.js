@@ -8,12 +8,14 @@ import Helmet from 'react-helmet';
 import styles from './Index.scss';
 import Episodes from '../Episodes/Episodes';
 import Episode from '../../components/Episode/Episode';
+import Player from '../../components/Player/Player';
 import * as actionCreators from 'redux/modules/playing';
 import logo from './logo.svg';
 
 function mapDispatchToProps(dispatch) {
   return { actions: bindActionCreators(actionCreators, dispatch) };
 }
+
 
 @asyncConnect([
   {
@@ -54,6 +56,8 @@ export default class Index extends Component {
             </h2>
         </div>
       </div>
+
+      <Player currentlyPlaying={playing}/>
 
       <div className="l-constrain">
           <div className={styles.episodes}>

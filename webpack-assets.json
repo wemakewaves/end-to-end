@@ -27,6 +27,13 @@
       "episodeDescription": "episodeDescription__3QHEK",
       "episodeNumber": "episodeNumber__2AW74",
       "_style": ".episode__2qL1D {\n    background: #96F6C5;\n    position: relative;\n    padding: 1rem 1rem 2rem 4rem;\n\n    color: #008B8B;\n        margin: 0 1rem 2rem 1rem\n\n}\n\n    @media (min-width: 800px) {\n\n    .episode__2qL1D {\n        flex: 1\n\n    }\n\n    }\n\n.episodePlay__1gWbx{\n    float: right;\n    position: relative;\n    right: -2rem;\n    top: -2rem;\n    padding: 0;\n    margin: 0;\n    background:transparent;\n    border: none;\n}\n\n\n.episodeName__vqLB2 {\n    text-transform: uppercase;\n    font-size: 26px;\n    font-weight: 600;\n    margin: 5rem 0 .25em 0;\n    line-height: 1.1;\n}\n\n.episodeDescription__3QHEK {\n    font-size: 20px;\n    margin: 0;\n}\n\n.episodeNumber__2AW74 {\n    text-transform: uppercase;\n    transform: rotate(90deg);\n    position: absolute;\n    top: 2.5rem;\n    left: -1rem;\n    font-size: 18px;\n    font-weight: bold\n}\n\n.episodeNumber__2AW74:before {\n    content: 'Episode ';\n    text-transform: uppercase\n\n}\n"
+    },
+    "./src/components/Player/Player.scss": {
+      "timeline": "timeline__1e4Eg",
+      "playhead": "playhead__2R115",
+      "audio_progress_container": "audio_progress_container__zEOG-",
+      "audio_progress": "audio_progress__25NYn",
+      "_style": "\n.timeline__1e4Eg {\n    width: 400px;\n\theight: 20px;\n\tbackground: #4200f7;\n\tposition: relative;\n\tborder-radius: 15px;\n    margin: 0;\n}\n\n.playhead__2R115 {\n    width: 18px;\n\theight: 18px;\n\tborder-radius: 50%;\n\ttop: 1px;\n    position: absolute;\n\tbackground: rgba(0, 255, 196, 0.82);\n}\n\n\n.audio_progress_container__zEOG- {\n  position: relative;\n  height: 30px;\n  flex-grow: 1;\n}\n.audio_progress__25NYn {\n  background-color: #4a4a4a;\n  height: 100%;\n  width: 0;\n  will-change: width;\n}\n"
     }
   }
 }
