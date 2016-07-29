@@ -1,0 +1,24 @@
+{
+  "javascript": {
+    "main": "http://localhost:8080/main.js"
+  },
+  "styles": {},
+  "assets": {
+    "./src/containers/App/App.css": {
+      "_style": "body {\n  line-height: 1.9;\n  font-size: 16px;\n}"
+    },
+    "./src/containers/Index/Index.scss": {
+      "wrapper": "wrapper__3iNGN",
+      "jumbotron": "jumbotron__2_vbE",
+      "description": "description__3Cj8g",
+      "_style": ".wrapper__3iNGN {\n  margin-top: 50px;\n}\n\n.jumbotron__2_vbE {\n  background-color: #333;\n  color: #ffffff;\n  text-align: center;\n  padding: 80px 0;\n}\n\n.jumbotron__2_vbE h1 {\n  font-size: 8em;\n  margin-top: 0;\n}\n\n.jumbotron__2_vbE .description__3Cj8g {\n  font-size: 1.5em;\n  margin-bottom: 30px;\n}\n"
+    },
+    "./src/containers/Episodes/Episodes.scss": {
+      "wrapper": "wrapper__3uPW9",
+      "_style": ".wrapper__3uPW9 {\n  margin-top: 50px;\n  padding-top: 20px;\n}\n"
+    },
+    "./src/components/Episode/Episode.scss": {
+      "_style": ""
+    }
+  }
+}

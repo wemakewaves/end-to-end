@@ -1,0 +1,12 @@
+{
+  "generator-racket": {
+    "generatorVersion": "1.6.0",
+    "appName": "end2endFm",
+    "filters": {
+      "postcss": true,
+      "reduxSaga": true,
+      "reduxThunk": false,
+      "reduxForm": false
+    }
+  }
+}
