@@ -1,5 +1,13 @@
-:local(.audio_player) {
+:local(.audio_player_container) {
+    background:url('./masthead.jpg') no-repeat;
+    background-size: cover;
+    padding: 1rem 0;
     margin-bottom: 2rem;
+}
+
+:local(.audio_player) {
+    display: flex;
+    align-items: center;
 }
 
 :local(.audio_progress_container) {
@@ -19,4 +27,48 @@
     border-radius: 5px;
     width: 0;
     will-change: width;
+}
+
+:local(.audio_time) {
+    min-width: 40px;
+    margin-left: 1rem;
+    color: #008B8B;
+}
+
+:local(.button) {
+    margin-right: 1rem;
+    appearance: none;
+    border-radius: 50%;
+    border: 0;
+    width: 50px;
+    height: 50px;
+    background-color: #5FCEC5;
+    background-image: url('./play.png');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 60% center;
+    transition: background-color .2s;
+
+    &:hover {
+        background-color: #36ccbf;
+    }
+}
+
+:local(.button_paused) {
+    margin-right: 1rem;
+    appearance: none;
+    border-radius: 50%;
+    border: 0;
+    width: 50px;
+    height: 50px;
+    background-color: #5FCEC5;
+    background-image: url('./pause.png');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 50% center;
+    transition: background-color .2s;
+
+    &:hover {
+        background-color: #36ccbf;
+    }
 }

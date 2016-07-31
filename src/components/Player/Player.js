@@ -91,7 +91,6 @@ export default class Player extends Component {
         } else if (!this.seekInProgress) {
             return;
         }
-        console.log('seeeeeek')
 
         /* we don't want mouse handlers to receive the event
         * after touch handlers if we're seeking.
@@ -143,31 +142,38 @@ export default class Player extends Component {
         const fullTime = convertToTime(duration);
         const timeRatio = `${ elapsedTime } / ${ fullTime }`;
 
-        console.log(displayedTime, duration, (displayedTime / duration) * 100);
-
         const progressBarWidth = `${ (displayedTime / duration) * 100 }%`;
 
         return (
-            <div className={styles.audio_player}>
+            <div className={styles.audio_player_container}>
                 <div className="l-constrain">
 
-                    <button onClick={this.playPause.bind(this)}>play/pause</button>
+                    <div className={styles.audio_player}>
 
-                    <div id="audio_progress_container"
-                         className={styles.audio_progress_container}
-                         ref={ (ref) => this.audioProgressContainer = ref }
-                         onMouseDown={ this.adjustDisplayedTime.bind(this) }
-                         onMouseMove={ this.adjustDisplayedTime.bind(this) }
-                         onTouchStart={ this.adjustDisplayedTime.bind(this) }
-                         onTouchMove={ this.adjustDisplayedTime.bind(this) }>
-                        <div id="audio_progress"
-                           className={styles.audio_progress}
-                           style={ { width: progressBarWidth } }></div>
-                   </div>
+                        <button onClick={this.playPause.bind(this)}
+                                className={this.playing ? styles.button_paused : styles.button}>
+                        </button>
 
-                    <audio src={currentlyPlaying.url} ref={(ref) => this.audioEl = ref} autoPlay="true">
-                        {incompatabilityMessage}
-                    </audio>
+                        <div id="audio_progress_container"
+                             className={styles.audio_progress_container}
+                             ref={ (ref) => this.audioProgressContainer = ref }
+                             onMouseDown={ this.adjustDisplayedTime.bind(this) }
+                             onMouseMove={ this.adjustDisplayedTime.bind(this) }
+                             onTouchStart={ this.adjustDisplayedTime.bind(this) }
+                             onTouchMove={ this.adjustDisplayedTime.bind(this) }>
+                            <div id="audio_progress"
+                               className={styles.audio_progress}
+                               style={ { width: progressBarWidth } }></div>
+                        </div>
+
+                        <div className={styles.audio_time}>
+                            {convertToTime(displayedTime)}
+                        </div>
+
+                        <audio src={currentlyPlaying.url} ref={(ref) => this.audioEl = ref} autoPlay="true">
+                            {incompatabilityMessage}
+                        </audio>
+                    </div>
                 </div>
             </div>
         );
