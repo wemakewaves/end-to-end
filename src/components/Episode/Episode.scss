@@ -1,10 +1,11 @@
 :local(.episode) {
-    background: #96F6C5;
+    background: #fff;
     position: relative;
     padding: 1rem 1rem 2rem 4rem;
-
+    border:5px solid #5FCEC5;
     color: #008B8B;
     margin: 0 1rem 2rem 1rem;
+    transition: background 0.5s ease;
 
     @media (min-width: 800px) {
         flex-basis: calc(50% - 2rem);
@@ -14,15 +15,26 @@
 
 :local(.episodePlay){
     float: right;
-    position: relative;
-    right: -2rem;
-    top: -2rem;
     padding: 0;
-    margin: 0;
+    margin: -2.1rem -1.75rem 0 0;
     background:transparent;
     border: none;
+    cursor: pointer;
+    shape-outside: url(./PlayIcon.svg);
+
+    transition: transform 0.25s ease;
+    &:hover {
+        transform: scale(0.97);
+    }
+    &:focus {
+        outline: none;
+    }
 }
 
+:local(.episodeNowPlaying) {
+    background: #96F6C5;
+    border-color: #96F6C5;
+}
 
 :local(.episodeName) {
     text-transform: uppercase;

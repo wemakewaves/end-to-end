@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="155px" height="151px" viewBox="0 0 155 151" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="149px" height="147px" viewBox="0 0 149 147" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
     <title>Group</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Group" transform="translate(2.000000, 2.000000)">
-            <ellipse id="Shape" stroke="#008B8B" stroke-width="5" cx="75.5613135" cy="73.2873713" rx="74.941771" ry="72.6741525"></ellipse>
-            <polygon id="Shape" fill="#008B8B" points="50.2817284 32.8938621 119.007535 70.1183633 50.2817284 112.126583"></polygon>
+        <g id="Group">
+            <ellipse id="Shape" fill="#5FCEC5" cx="74.3646061" cy="73.3689154" rx="73.7548756" ry="72.7550143"></ellipse>
+            <polygon id="Shape" fill="#FFFFFF" points="49.485388 32.9304619 117.122745 70.1963814 49.485388 112.251342"></polygon>
         </g>
     </g>
 </svg>

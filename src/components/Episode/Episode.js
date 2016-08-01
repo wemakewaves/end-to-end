@@ -1,6 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import styles from './Episode.scss';
 import playIcon from './PlayIcon.svg';
+import pauseIcon from './PauseIcon.svg';
+import classNames from 'classnames';
+
 export default class Episode extends Component {
 
   static propTypes = {
@@ -10,15 +13,21 @@ export default class Episode extends Component {
 
   render() {
     const { id, title, description, speakers, date, duration, url } = this.props.episode;
+    const nowPlaying =  this.props.episode.id === this.props.nowPlaying.id;
+
+    const episodeClasses = classNames({
+        [styles.episode]: true,
+        [styles.episodeNowPlaying]: nowPlaying
+    });
 
     return (
-      <div className={styles.episode}>
+      <div className={episodeClasses}>
 
         <button
           className={styles.episodePlay}
           onClick={ () => this.props.playEpisode(this.props.episode) }
           >
-          <img src={playIcon} />
+          <img src={ (nowPlaying) ? pauseIcon : playIcon} />
         </button>
 
         <h3 className={styles.episodeName}>
@@ -30,8 +39,6 @@ export default class Episode extends Component {
         <p className={styles.episodeDescription}>
             { description }
         </p>
-
-        Currently Playing: { this.props.episode.id === this.props.nowPlaying.id ? 'yes' : 'no' }
 
       </div>
     );

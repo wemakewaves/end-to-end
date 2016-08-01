@@ -25,10 +25,14 @@ body {
 :local(.masthead) {
     padding: 1.5rem 0;
     color: #008B8B;
-    min-height: 55vh;
+    min-height: 45vh;
     background:url('./masthead.jpg') no-repeat;
     background-size: cover;
     text-align: center;
+
+    @media (min-width: 800px) {
+        min-height: 55vh;
+    }
 }
 
 
