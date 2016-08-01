@@ -19,6 +19,7 @@ body {
 .l-constrain {
     max-width: 1062px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 :local(.masthead) {
@@ -40,6 +41,8 @@ body {
 
     @media (min-width: 800px) {
         display: flex;
+        flex-flow: row;
+        flex-wrap: wrap;
         margin: 0 -1rem;
     }
 }

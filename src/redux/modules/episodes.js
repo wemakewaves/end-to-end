@@ -22,7 +22,7 @@ export default function reducer(state = initialState, action = {}) {
       return {
         loaded: true,
         loading: false,
-        data: action.data
+        data: action.data.reverse()
       };
     case LOAD_FAIL:
       return {
