@@ -1,16 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="155px" height="151px" viewBox="0 0 155 151" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
-    <title>Group 2</title>
+<svg width="64px" height="65px" viewBox="0 0 64 65" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <title>play</title>
     <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Group-2" transform="translate(2.000000, 2.000000)">
-            <g id="Group" stroke="#008B8B" stroke-width="5">
-                <ellipse id="Shape" cx="75.5613135" cy="73.2873713" rx="74.941771" ry="72.6741525"></ellipse>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#71DBC3" offset="0%"></stop>
+            <stop stop-color="#83E4B7" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="38.2549088%" y1="61.6741886%" x2="50%" y2="2.55952372%" id="linearGradient-2">
+            <stop stop-color="#71DBC3" offset="0%"></stop>
+            <stop stop-color="#83E4B7" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="16.0563575%" y1="17.1916555%" x2="78.2786822%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#92F5E2" offset="0%"></stop>
+            <stop stop-color="#83E4B7" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Web-design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="e2e-white-copy-6" transform="translate(-824.000000, -798.000000)">
+            <g id="Group-2" transform="translate(121.000000, 687.000000)">
+                <g id="Episode-1---landscape" transform="translate(0.000000, 0.835938)">
+                    <g id="play" transform="translate(702.786404, 110.675781)">
+                        <circle id="Shape" fill="#FFFFFF" cx="32.2226562" cy="32.2568359" r="28.0400391"></circle>
+                        <rect id="Shape" fill="url(#linearGradient-1)" x="21.5715063" y="17.402832" width="8.25517927" height="28.8254008"></rect>
+                        <rect id="Shape" fill="url(#linearGradient-2)" x="34.3295106" y="17.402832" width="8.25517927" height="28.8254008"></rect>
+                        <path d="M30.398884,0.40197863 C30.972853,0.371104501 31.5508712,0.35546875 32.1325414,0.35546875 C49.674324,0.35546875 63.8947485,14.5758932 63.8947485,32.1176758 C63.8947485,49.6594583 49.674324,63.8798828 32.1325414,63.8798828 C14.5907589,63.8798828 0.370334408,49.6594583 0.370334408,32.1176758 C0.370334408,26.8588715 1.64835876,21.8985658 3.91075805,17.5304081 L7.72469781,18.8448307 C5.58453025,22.7895828 4.3690469,27.3090254 4.3690469,32.1123594 C4.3690469,47.500119 16.8432907,59.9743628 32.2310502,59.9743628 C47.6188097,59.9743628 60.0930535,47.500119 60.0930535,32.1123594 C60.0930535,16.7245999 47.6188097,4.25035612 32.2310502,4.25035612 C31.6154613,4.25035612 31.0045352,4.27032001 30.398884,4.30963566 L30.398884,0.40197863 Z" id="Combined-Shape" fill="url(#linearGradient-3)"></path>
+                    </g>
+                </g>
             </g>
-            <rect id="Shape" fill="#008B8B" x="48.076852" y="35.5" width="22" height="77"></rect>
-            <rect id="Shape" fill="#008B8B" x="80.076852" y="35.5" width="22" height="77"></rect>
         </g>
     </g>
 </svg>

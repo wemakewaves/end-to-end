@@ -11,6 +11,7 @@ import Episode from '../../components/Episode/Episode';
 import Player from '../../components/Player/Player';
 import * as actionCreators from 'redux/modules/playing';
 import logo from './logo.svg';
+import mic from './mic.png';
 
 function mapDispatchToProps(dispatch) {
   return { actions: bindActionCreators(actionCreators, dispatch) };
@@ -34,9 +35,9 @@ function mapDispatchToProps(dispatch) {
 
 export default class Index extends Component {
 
-  renderEpisode(episode) {
+  renderEpisode(episode, modifier) {
       return (
-          <Episode key={episode.id} playEpisode={this.props.actions.startPlaying} nowPlaying={this.props.playing} episode={episode} />
+          <Episode key={episode.id} playEpisode={this.props.actions.startPlaying} nowPlaying={this.props.playing} episode={episode} modifier={modifier} />
       )
   }
 
@@ -50,9 +51,11 @@ export default class Index extends Component {
 
       <div className={styles.masthead}>
         <div className="l-constrain">
-            <img src={logo} width="246" height="246" />
+            <img className={styles.logo} src={logo} width="246" height="246" />
             <h2 className={styles.strapline}>
-                The podcast discussing the journey of digital products from end to end
+                The podcast discussing the journey of digital products from end to end. Hosted by the team at UVD;
+                a digital studiobased in the heart of Tech City in London. Their skills range from startup consultancy,
+                UX Strategy, Frontend and Backend Development and Design.
             </h2>
         </div>
       </div>
@@ -61,7 +64,10 @@ export default class Index extends Component {
 
       <div className="l-constrain">
           <div className={styles.episodes}>
-             { episodes.data.map(episode => this.renderEpisode(episode)) }
+              { this.renderEpisode(episodes.data[0], 'episodeLandscape') }
+              <img className={styles.mic}src={mic}  />
+              { this.renderEpisode(episodes.data[1], 'episodePortrait') }
+
           </div>
       </div>
 
