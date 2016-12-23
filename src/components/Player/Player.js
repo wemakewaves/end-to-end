@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import styles from './Player.scss';
+import classNames from 'classnames';
 
 function convertToTime (number) {
   const mins = Math.floor(number / 60);
@@ -23,7 +24,7 @@ export default class Player extends Component {
     }
 
     componentWillMount() {
-        this.playing = true;
+        this.playing = false;
     }
 
     componentWillUnmount () {
@@ -144,6 +145,13 @@ export default class Player extends Component {
 
         const progressBarWidth = `${ (displayedTime / duration) * 100 }%`;
 
+
+        const buttonClasses = classNames({
+            [styles.button]: true,
+            [styles.button_paused]: this.playing
+        });
+
+
         return (
             <div className={styles.audio_player_container}>
                 <div className="l-constrain">
@@ -151,28 +159,34 @@ export default class Player extends Component {
                     <div className={styles.audio_player}>
 
                         <button onClick={this.playPause.bind(this)}
-                                className={this.playing ? styles.button_paused : styles.button}>
+                                className={buttonClasses}>
                         </button>
 
-                        <div id="audio_progress_container"
-                             className={styles.audio_progress_container}
-                             ref={ (ref) => this.audioProgressContainer = ref }
-                             onMouseDown={ this.adjustDisplayedTime.bind(this) }
-                             onMouseMove={ this.adjustDisplayedTime.bind(this) }
-                             onTouchStart={ this.adjustDisplayedTime.bind(this) }
-                             onTouchMove={ this.adjustDisplayedTime.bind(this) }>
-                            <div id="audio_progress"
-                               className={styles.audio_progress}
-                               style={ { width: progressBarWidth } }></div>
-                        </div>
+                        <div className={styles.playing_wrapper}>
+                            <div className={styles.now_playing_title}>
+                                {currentlyPlaying.title}&nbsp;
+                            </div>
 
-                        <div className={styles.audio_time}>
-                            {convertToTime(displayedTime)}
-                        </div>
+                            <div id="audio_progress_container"
+                                className={styles.audio_progress_container}
+                                ref={ (ref) => this.audioProgressContainer = ref }
+                                onMouseDown={ this.adjustDisplayedTime.bind(this) }
+                                onMouseMove={ this.adjustDisplayedTime.bind(this) }
+                                onTouchStart={ this.adjustDisplayedTime.bind(this) }
+                                onTouchMove={ this.adjustDisplayedTime.bind(this) }>
+                                <div id="audio_progress"
+                                className={styles.audio_progress}
+                                style={ { width: progressBarWidth } }></div>
+                            </div>
 
-                        <audio src={currentlyPlaying.url} ref={(ref) => this.audioEl = ref} autoPlay="true">
-                            {incompatabilityMessage}
-                        </audio>
+                            <div className={styles.audio_time}>
+                                {convertToTime(displayedTime)}
+                            </div>
+
+                            <audio src={currentlyPlaying.url} ref={(ref) => this.audioEl = ref} autoPlay="true">
+                                {incompatabilityMessage}
+                            </audio>
+                        </div>
                     </div>
                 </div>
             </div>

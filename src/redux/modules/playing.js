@@ -1,8 +1,6 @@
 export const PLAYER_PLAY = 'app/podcasts/PLAY';
 
-const initialState = {
-    title: 'hello'
-};
+const initialState = {};
 
 export default function reducer(state = initialState, action = {}) {
   switch (action.type) {

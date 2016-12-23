@@ -11,7 +11,11 @@ import Episode from '../../components/Episode/Episode';
 import Player from '../../components/Player/Player';
 import * as actionCreators from 'redux/modules/playing';
 import logo from './logo.svg';
-import mic from './mic.png';
+import micSmall from './mic-small.jpg';
+import mic from './mic.jpg';
+import team from './team.jpg';
+import teamSmall from './team-small.jpg';
+import classNames from 'classnames';
 
 function mapDispatchToProps(dispatch) {
   return { actions: bindActionCreators(actionCreators, dispatch) };
@@ -63,12 +67,47 @@ export default class Index extends Component {
       <Player currentlyPlaying={playing}/>
 
       <div className="l-constrain">
-          <div className={styles.episodes}>
-              { this.renderEpisode(episodes.data[0], 'episodeLandscape') }
-              <img className={styles.mic}src={mic}  />
-              { this.renderEpisode(episodes.data[1], 'episodePortrait') }
 
+          <div className={styles.grid}>
+
+              <div className={styles.grid_item}>
+                <div className={classNames({
+                   [styles.panel]: true,
+                   [styles.panelActive]: playing.id === episodes.data[0].id
+                })}>
+                    <h3 className={styles.panel_title}>Podcast</h3>
+                    { this.renderEpisode(episodes.data[0]) }
+                </div>
+              </div>
+
+              <div className={styles.grid_item}>
+                <img src={micSmall} alt="" />
+              </div>
+
+              <div className={styles.grid_item}>
+                <div className={classNames({
+                   [styles.panel]: true,
+                   [styles.panelActive]: playing.id === episodes.data[1].id
+                })}>
+                    <h3 className={styles.panel_title}>Podcast</h3>
+                    { this.renderEpisode(episodes.data[1]) }
+                </div>
+              </div>
+
+              <div className={styles.grid_item}>
+
+                <div className={styles.panel}>
+                    <h3 className={styles.panel_title}>Tweet</h3>
+                    <p> content goes here like </p>
+                </div>
+
+              </div>
+
+              <div className={styles.grid_item}>
+                <img src={teamSmall} alt="Photo of the endtoend.fm team around the table" />
+              </div>
           </div>
+
       </div>
 
     </div>);

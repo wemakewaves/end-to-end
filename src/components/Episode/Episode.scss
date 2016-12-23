@@ -1,106 +1,69 @@
 :local(.episode) {
-    background: #B2DCDC;
     position: relative;
-    padding: 2.5rem 1rem 2rem 1rem;
-    color: #4D7777;
-    margin: 0 1rem 2rem 1rem;
-    transition: background 0.5s ease;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
 
-
-
+    @media (min-width: 800px) {
+      font-size: 1.25rem;
+      flex-direction: row;
+    }
 }
 
-:local(.episodeLandscape) {
-  background: #B2DCDC;
-  color: #4D7777;
 
-  @media (min-width: 800px) {
-    order: 0;
-    flex: 2 1 auto;
-    align-self: auto;
-    height:300px;
-  }
-
-}
-
-:local(.episodePortrait) {
-  background: #BFEAF7;
-  color: #598491;
-
-  @media (min-width: 800px) {
-  width: 20%;
-  height: 550px;
-  order: 0;
-   flex: 0 1 auto;
-   align-self: flex-end;
-   position: absolute;
-   top: 59.5em;
-  }
-
-}
-
-:local(.episodeInfo) {
-  position: absolute;
-  right: 1em;
-  top:2em;
-  margin: 0;
-  font-size: 16px;
-
+:local(.episodeMeta) {
+    margin: 0;
 }
 
 :local(.episodePlay){
-    float: right;
-    padding: 1e;
     opacity: .7;
     mix-blend-mode: multiply;
-    // margin: -2.1rem -1.75rem 0 0;
     background:transparent;
     border: none;
     cursor: pointer;
     shape-outside: url(./PlayIcon.svg);
-    position: absolute;
-    right: 1em;
-    top: 35%;
     transition: transform 0.25s ease;
+    display: block;
+    height: 46px;
+    width: 46px;
+
     &:hover {
         transform: scale(0.97);
     }
     &:focus {
         outline: none;
     }
+
+    @media (min-width: 800px) {
+        height: 56px;
+        width: 56px;
+    }
 }
 
 :local(.episodeNowPlaying) {
-    background: #008B8B;
-    color: white;
-
     .episodePlay {
       opacity: 1;
     }
 }
 
 :local(.episodeName) {
-    font-size: 24px;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
     font-weight: bold;
-    margin: 3.5rem 0 .5em 0;
+    margin: 0;
     line-height: 1.1;
-    // color: #4A4A4A .4;
-
 }
 
 :local(.episodeDescription) {
-    font-size: 20px;
     margin: 0 0 .5em 0;
     line-height: 1.4;
     width: 90%;
-    padding-right: 1em;
 }
 
 :local(.episodeHosts) {
-    font-size: 20px;
     margin: 0;
     line-height: 1.4;
-    padding-top: 2rem;
+    margin: 1rem 0;
 
     span {
       display: block;
@@ -108,16 +71,14 @@
     }
 }
 
-:local(.tag) {
-    text-transform: uppercase;
-    // transform: rotate(90deg);
-    position: absolute;
-    // display: block;
-    top: 2rem;
-    left: 1rem;
-    font-size: 16px;
-    &:before {
-        content: 'Podcast ';
-        text-transform: uppercase;
+:local(.episodeDetails) {
+    flex: 2;
+}
+
+:local(.episodeActions) {
+    flex: 1;
+
+    button {
+        margin: 0 auto;
     }
 }

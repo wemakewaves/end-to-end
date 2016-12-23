@@ -17,43 +17,38 @@ export default class Episode extends Component {
 
     const episodeClasses = classNames({
         [styles.episode]: true,
-        [styles.episodeLandscape]: this.props.modifier === 'episodeLandscape',
-        [styles.episodePortrait]: this.props.modifier === 'episodePortrait',
         [styles.episodeNowPlaying]: nowPlaying
     });
 
     return (
-      <div className={episodeClasses}>
+        <div className={episodeClasses}>
 
-      <span className={styles.tag}>{id}</span>
+            <div className={styles.episodeDetails}>
+                <p className={styles.episodeMeta}>
+                    44 minutes | published 09/05/2016
+                </p>
 
-      <p className={styles.episodeInfo}>
-          44 minutes | published 09/05/2016
-      </p>
+                <h3 className={styles.episodeName}>
+                    { title }
+                </h3>
 
-        <button
-          className={styles.episodePlay}
-          onClick={ () => this.props.playEpisode(this.props.episode) }
-          >
-          <img src={ (nowPlaying) ? pauseIcon : playIcon} />
-        </button>
 
-        <h3 className={styles.episodeName}>
-            { title }
-        </h3>
+                <p className={styles.episodeDescription}>
+                    { description }
+                </p>
 
-        <span className={styles.tag}>{id}</span>
+                <p className={styles.episodeHosts}>
+                    Hosted by: <span>@Eddy, @James, @Ryan</span>
+                </p>
+            </div>
 
-        <p className={styles.episodeDescription}>
-            { description }
-        </p>
+            <div className={styles.episodeActions}>
+                <button className={styles.episodePlay} onClick={ () => this.props.playEpisode(this.props.episode) } >
+                    <img src={ (nowPlaying) ? pauseIcon : playIcon} />
+                </button>
+            </div>
 
-        <p className={styles.episodeHosts}>
-            Hosted by:
-            <span>@Eddy, @James, @Ryan</span>
-        </p>
-
-      </div>
+        </div>
     );
 
   }
