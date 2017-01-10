@@ -21,15 +21,20 @@
     background:transparent;
     border: none;
     cursor: pointer;
-    shape-outside: url(./PlayIcon.svg);
     transition: transform 0.25s ease;
     display: block;
-    height: 46px;
-    width: 46px;
+    padding: 0;
+    height: 40px;
+    width: 40px;
+    
+    img {
+        margin: 0 auto;
+    }
 
     &:hover {
         transform: scale(0.97);
     }
+
     &:focus {
         outline: none;
     }
@@ -50,7 +55,7 @@
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
     font-weight: bold;
-    margin: 0;
+    margin: 0 0 .5rem 0;
     line-height: 1.1;
 }
 

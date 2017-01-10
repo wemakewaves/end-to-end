@@ -73,7 +73,11 @@ body {
     background: rgba(97,233,114,0.30);
     transition: background 0.5s ease;
     color: rgba(0,0,0,0.5);
-
+    
+    a {
+        color: rgba(0,0,0,0.5);
+    }
+    
     :local(.grid_item):nth-child(1) & {
         background: rgba(0,139,139,0.30);
     }
@@ -81,14 +85,43 @@ body {
     :local(.grid_item):nth-child(3) & {
         background: rgba(41,187,230,0.30);
     }
+
+    :local(.grid_item):nth-child(6) & {
+        background: #D9D4E7;
+    }
+
+    :local(.grid_item):nth-child(7) & {
+        background: rgba(0,139,139,0.30);
+    }
+
+    :local(.grid_item):nth-child(8) & {
+        background: rgba(41,187,230,0.30);
+    }
     /* Rectangle 3: */
 
 }
 
+:local(.panelBlue) {
+        background: rgba(41,187,230,0.30);    
+}
+
+:local(.panelGreyGreen) {
+    background: rgba(0,139,139,0.30);
+}
+
+:local(.panelGreen) {
+    background: rgba(97,233,114,0.30);
+}
+
+
+:local(.panelPurple) {
+    background: #D9D4E7;
+}
+
+
 :local(.panelActive) {
     background: #008B8B;
     color: white;
-
 }
 
 :local(.panel_title) {

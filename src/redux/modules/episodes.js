@@ -18,7 +18,6 @@ export default function reducer(state = initialState, action = {}) {
         data: []
       };
     case LOAD_SUCCESS:
-    console.log(action.data);
       return {
         loaded: true,
         loading: false,
